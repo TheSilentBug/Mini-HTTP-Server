@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini HTTP Server Panel</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+    <script src="/static/app.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <header class="top">
+        <h1>Mini HTTP Server</h1>
+        <p class="sub">A tiny UI to test your Go server APIs</p>
+    </header>
+
+    <section class="card">
+        <div class="row">
+            <div>
+                <h2>Status</h2>
+                <p class="muted">Checks /health and /api/time</p>
+            </div>
+            <div class="actions">
+                <button id="btnHealth" type="button">Check Health</button>
+                <button id="btnTime" type="button">Get Time</button>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="box">
+                <h3>/health</h3>
+                <pre id="outHealth">{}</pre>
+            </div>
+
+            <div class="box">
+                <h3>/api/time</h3>
+                <pre id="outTime">{}</pre>
+            </div>
+        </div>
+    </section>
+
+    <section class="card">
+        <div class="row">
+            <div>
+                <h2>Static Files</h2>
+                <p class="muted">Reads a file from /static/hello.txt</p>
+            </div>
+            <div class="actions">
+                <button id="btnStatic" type="button">Load hello.txt</button>
+            </div>
+        </div>
+
+        <div class="box">
+            <h3>/static/hello.txt</h3>
+            <pre id="outStatic">Click “Load hello.txt”</pre>
+        </div>
+    </section>
+
+    <footer class="foot">
+        <span class="muted">Go + Vanilla HTML/CSS/JS</span>
+    </footer>
+</div>
+
+<!-- خیلی مهم: app.js باید از /static لود شود -->
+<script src="/static/app.js"></script>
+</body>
+</html>
